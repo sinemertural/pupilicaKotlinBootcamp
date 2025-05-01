@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Review</string>
+    <string name="baslik">Review</string>
+    <string name="reviewAciklama">How was your experience with Dr. Anna Marinda ?</string>
+    <string name="reviewBaslik">Write Your Review </string>
+    <string name="aciklama">This service allows me to connect with quality doctors at any time, even in the
+        middle of the night or when I’m traveling. It’s incredibly helpful for addressing urgent health issues or
+        getting medical advice promptly. </string>
+    <string name="soru">Would you recommend Dr. Anna Marinda to your friend ? </string>
+    <string name="cancel">Cancel </string>
+    <string name="submit">Submit </string>
+    <string name="yes">Yes </string>
+    <string name="no">No </string>
+</resources>

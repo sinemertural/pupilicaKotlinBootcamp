@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Review</string>
+    <string name="baslik">Değerlendirme</string>
+    <string name="reviewAciklama">Dr. Anna Marinda ile deneyiminiz nasıldı?</string>
+    <string name="reviewBaslik">Değerlendirmenizi Yazın</string>
+    <string name="aciklama">Bu hizmet, gece yarısı ya da seyahat ederken bile kaliteli doktorlara ulaşmamı sağlıyor.
+        Acil sağlık sorunlarını çözmek veya hızlıca tıbbi tavsiye almak için son derece yardımcı.</string>
+    <string name="soru">Dr. Anna Marinda’yı bir arkadaşınıza önerir miydiniz?</string>
+    <string name="cancel">İptal </string>
+    <string name="submit">Gönder </string>
+    <string name="yes">Evet </string>
+    <string name="no">Hayır </string>
+</resources>
