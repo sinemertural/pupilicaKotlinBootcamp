@@ -71,7 +71,7 @@ class MainActivity : AppCompatActivity() {
                 }
                 else -> "Hata"
             }
-        } catch (e: Exception) {
+        } catch (e: Exception) {//hata mesajı
             "Hata"
         }
     }
