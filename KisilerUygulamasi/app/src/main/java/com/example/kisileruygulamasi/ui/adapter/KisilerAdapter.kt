@@ -11,12 +11,13 @@ import com.example.kisileruygulamasi.data.entity.Kisiler
 import com.example.kisileruygulamasi.databinding.CardTasarimBinding
 import com.example.kisileruygulamasi.databinding.FragmentAnasayfaBinding
 import com.example.kisileruygulamasi.ui.fragment.AnasayfaFragmentDirections
+import com.example.kisileruygulamasi.ui.viewModel.AnasayfaViewModel
 import com.google.android.material.snackbar.Snackbar
 
-class KisilerAdapter(var mContext : Context, var kisilerListesi : List<Kisiler>) :
+class KisilerAdapter(var mContext : Context,
+                     var kisilerListesi : List<Kisiler>,
+                     var viewModel: AnasayfaViewModel) :
 RecyclerView.Adapter<KisilerAdapter.CardTasarimTutucu>(){
-
-
 
     inner class CardTasarimTutucu (var tasarim :CardTasarimBinding) : RecyclerView.ViewHolder(tasarim.root)
 
@@ -41,7 +42,7 @@ RecyclerView.Adapter<KisilerAdapter.CardTasarimTutucu>(){
         t.imageViewSil.setOnClickListener{
             Snackbar.make(it,"${kisi.kisi_ad} silinsin mi ?", Snackbar.LENGTH_SHORT)
                 .setAction("EVET"){
-                    sil(kisi.kisi_id)
+                   viewModel.sil(kisi.kisi_id)
                 }.show()
         }
 
@@ -53,9 +54,6 @@ RecyclerView.Adapter<KisilerAdapter.CardTasarimTutucu>(){
     }
 
 
-    fun sil(kisiId: Int) {
-        Log.e("Kişi sil : " , kisiId.toString())
-    }
 
 
 

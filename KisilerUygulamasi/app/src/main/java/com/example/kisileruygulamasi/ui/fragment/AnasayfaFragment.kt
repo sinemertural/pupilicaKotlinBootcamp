@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.viewModels
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
@@ -13,11 +14,13 @@ import com.example.kisileruygulamasi.R
 import com.example.kisileruygulamasi.data.entity.Kisiler
 import com.example.kisileruygulamasi.databinding.FragmentAnasayfaBinding
 import com.example.kisileruygulamasi.ui.adapter.KisilerAdapter
+import com.example.kisileruygulamasi.ui.viewModel.AnasayfaViewModel
+import com.example.kisileruygulamasi.ui.viewModel.KisiDetayViewModel
 
 
 class AnasayfaFragment : Fragment() {
     private lateinit var binding: FragmentAnasayfaBinding
-
+    private lateinit var viewModel: AnasayfaViewModel
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -36,7 +39,7 @@ class AnasayfaFragment : Fragment() {
         kisilerListesi.add(k2)
         kisilerListesi.add(k3)
 
-        val kisilerAdapter = KisilerAdapter(requireContext(),kisilerListesi)
+        val kisilerAdapter = KisilerAdapter(requireContext(),kisilerListesi,viewModel)
         binding.kisilerRV.adapter = kisilerAdapter
 
         binding.kisilerRV.layoutManager = LinearLayoutManager(requireContext()) //(alt alta)
@@ -45,12 +48,12 @@ class AnasayfaFragment : Fragment() {
 
         binding.searchView.setOnQueryTextListener(object : android.widget.SearchView.OnQueryTextListener{
             override fun onQueryTextChange(newText: String): Boolean {// harf girdikçe ve sildikçe çalışır
-                ara(newText)
+                viewModel.ara(newText)
                 return true
             }
 
             override fun onQueryTextSubmit(query: String): Boolean {// ara butonuna basılınca çalışır
-                ara(query)
+                viewModel.ara(query)
                 return true
             }
         })
@@ -58,7 +61,11 @@ class AnasayfaFragment : Fragment() {
 
     }
 
-    fun ara( aramaKelimesi: String){
-        Log.e("Kişi Ara", aramaKelimesi)
+    override fun onCreate(savedInstanceState: Bundle?) { //viewmodel bağlantısını sağladım her zaman onCreate içinde viewmodel bağlantısı yapılır
+        super.onCreate(savedInstanceState)
+        val tempViewModel : AnasayfaViewModel by viewModels()
+        viewModel = tempViewModel
     }
+
+
 }
