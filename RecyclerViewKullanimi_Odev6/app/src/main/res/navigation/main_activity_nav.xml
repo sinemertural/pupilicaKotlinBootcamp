@@ -18,5 +18,9 @@
         android:id="@+id/detayFragment"
         android:name="com.example.recyclerviewkullanimi_odev6.DetayFragment"
         android:label="fragment_detay"
-        tools:layout="@layout/fragment_detay" />
+        tools:layout="@layout/fragment_detay" >
+        <argument
+            android:name="urunNesnesi"
+            app:argType="com.example.recyclerviewkullanimi_odev6.Urunler" />
+    </fragment>
 </navigation>

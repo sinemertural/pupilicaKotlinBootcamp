@@ -11,11 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
-        android:cardCornerRadius="8dp"
-        android:cardElevation="2dp"
-        app:cardStrokeColor="#DDDDDD"
-        app:cardStrokeWidth="1dp"
-        android:cardBackgroundColor="@android:color/white">
+        >
 
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -31,7 +27,7 @@
                 android:text="Limon Kg"
                 android:textSize="20sp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imageViewUrun" />
+                app:layout_constraintTop_toBottomOf="@+id/imageViewUrunResim" />
 
             <TextView
                 android:id="@+id/textViewFiyat"
@@ -46,7 +42,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/textViewUrunName" />
 
             <ImageView
-                android:id="@+id/imageViewUrun"
+                android:id="@+id/imageViewUrunResim"
                 android:layout_width="200dp"
                 android:layout_height="200dp"
                 android:layout_marginStart="8dp"
@@ -67,18 +63,18 @@
                 app:backgroundTint="#FF7F00"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imageViewUrun"
+                app:layout_constraintTop_toBottomOf="@+id/imageViewUrunResim"
                 app:srcCompat="@drawable/add"
                 app:tint="@android:color/white" />
 
             <ImageView
-                android:id="@+id/imageView2"
+                android:id="@+id/imageViewFavoriResim"
                 android:layout_width="36dp"
                 android:layout_height="36dp"
                 android:layout_marginStart="175dp"
                 android:layout_marginTop="8dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/imageViewUrun"
+                app:layout_constraintTop_toTopOf="@+id/imageViewUrunResim"
                 app:srcCompat="@drawable/kalp_ikon" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
