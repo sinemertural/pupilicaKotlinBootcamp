@@ -27,6 +27,7 @@ RecyclerView.Adapter<UrunlerAdapter.CardTasarimTutucu>(){
         val urun = urunlerListesi.get(position)
         val t = holder.tasarim
         t.textViewFiyat.text = "${urun.urunFiyat} TL"
+        t.textViewUrunName.text = "${urun.urunIsim}"
         t.imageViewUrunResim.setImageResource(
             mContext.resources.getIdentifier(urun.urunResim,"drawable",mContext.packageName)
         )

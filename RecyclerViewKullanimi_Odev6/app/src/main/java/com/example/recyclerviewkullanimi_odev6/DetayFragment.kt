@@ -29,11 +29,8 @@ class DetayFragment : Fragment() {
         binding.imageViewUrunResim.setImageResource(
             resources.getIdentifier(urun.urunResim,"drawable",requireContext().packageName)
         )
-        binding.textViewUrunAdi.text = "${urun.urunResim}"
+        binding.textViewUrunAdi.text = "${urun.urunIsim}"
 
-        binding.imageViewFavori.setImageResource((
-                resources.getIdentifier(urun.urunResim,"drawable",requireContext().packageName)
-                ))
 
         return binding.root
     }
